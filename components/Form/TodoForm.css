@@ -1,0 +1,41 @@
+.todo-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.todo-form input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow var(--transition);
+}
+.todo-form input:focus {
+  outline: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+.todo-form button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent-color);
+  background-image: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.todo-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 480px) {
+  .todo-form {
+    flex-direction: column;
+  }
+  .todo-form button {
+    width: 100%;
+  }
+}

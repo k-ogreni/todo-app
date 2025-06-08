@@ -1,0 +1,79 @@
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.todo-item {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-left: 6px solid var(--accent-color);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+.todo-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 16px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+.edit-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  transition: border var(--transition), background var(--transition);
+}
+.edit-input.editing {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 4px;
+  outline: none;
+}
+.todo-item.completed .edit-input {
+  text-decoration: line-through;
+  color: #999;
+}
+.todo-item span {
+  flex: 1;
+  font-size: 1.1rem;
+  word-break: break-word;
+  transition: color var(--transition);
+}
+.todo-item.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+.todo-item button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: color var(--transition);
+  margin-left: 8px;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+}
+.todo-item button:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 640px) {
+  .todo-item button {
+    font-size: 0.9rem;
+  }
+  .todo-item span {
+     font-size: 0.9rem;
+  }
+}
